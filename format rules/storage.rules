@@ -1,0 +1,19 @@
+rules_version = '2';
+service firebase.storage {
+
+function isImageBelowMaxSize(maxSizeMB) {
+  return request.resource.size < maxSizeMB * 1024 * 1024
+      && request.resource.contentType.matches('image/.*');
+}
+
+   function signedInSuperAdmin() {
+    return request.auth.uid == '<uid>';
+  }
+
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read: if true;
+      allow write: if signedInSuperAdmin() &&  isImageBelowMaxSize(2);
+    }
+  }
+}

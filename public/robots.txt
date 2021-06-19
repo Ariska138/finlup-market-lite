@@ -1,0 +1,6 @@
+User-agent: *
+disallow:/fn-admin
+disallow:/invoice
+disallow:/logout
+disallow:/member
+disallow:/404.html

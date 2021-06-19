@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="../assets/css/normalize.css" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+    integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw=="
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a38b3c3354.js" crossorigin="anonymous"></script>
+
+  <style>
+    .fixed-button {
+      position: fixed;
+      bottom: 10px;
+      width: auto;
+      left: 50%;
+      height: auto;
+      /*height: auto;*/
+      margin: 0 auto;
+      margin-left: -112px;
+      border: 0px solid #d6d6d6;
+      z-index: 101;
+      padding: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="demo">
+  <!--[if lt IE 7]>
+      <p class="chromeframe">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> or
+        <a href="http://www.google.com/chromeframe/?redirect=true"
+          >activate Google Chrome Frame</a
+        >
+        to improve your experience.
+      </p>
+    <![endif]-->
+
+  <!-- Demo content -->
+  <div id="demo-content">
+    <header class="entry-header"></header>
+
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <div id="content">
+      <div class="container-fluid">
+        <div class="row my-3">
+          <div class="col-sm-3 my-0 py-3 my-lg-5" style="
+          background-color: aliceblue;
+      ">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            </div>
+          </div>
+
+          <div class="col-sm-9 my-3 my-lg-5">
+            <div class="tab-content" id="v-pills-tabContent">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer-->
+  <footer class="footer py-4" style="background-color: #e9ecef;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-auto text-lg-left"><small>Proudly created with <a
+              href="https://www.finlup.id">finlup.id</a></small></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="card-product-modal modal fade" id="list-detail-transaction" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <h2 class="text-uppercase">Detail</h2>
+                <div class="table-responsive-md">
+                  <table class="table mt-3 mb-0">
+                    <thead>
+                      <tr>
+                        <!-- <th scope="col">ID</th> -->
+                        <th scope="col">Nama</th>
+                        <th scope="col">item</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Jumlah</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-list-transaction">
+                      <tr>
+                        <td colspan="4">Belum ada barang yang dipilih</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <hr class="mt-0">
+                <div class="my-3 text-right">
+                  <b>Total : <span id="last-totall">0</span></b>
+                </div>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                  Tutup
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-product-modal modal fade" id="list-confirm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <h2 class="text-uppercase">Daftar Pesanan</h2>
+                <div class="table-responsive-md">
+                  <table class="table mt-3">
+                    <thead>
+                      <tr>
+                        <!-- <th scope="col">ID</th> -->
+                        <th scope="col">Nama</th>
+                        <th scope="col">item</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Jumlah</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-product-requests">
+                      <tr>
+                        <td colspan="4">Belum ada barang yang dipilih</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <hr>
+                <div class="my-3 text-right">
+                  <b>Total : <span id="last-total-confirm">0</span></b>
+                </div>
+                <a class="btn btn-success my-3" id="btn-confirm-transaction">
+                  Konfirmasi
+                </a>
+                <button class="btn btn-success my-3" id="btn-confirm-loading" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  <span class="sr-only">Loading...</span>
+                  Konfirmasi
+                </button>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                  Tutup
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Demo content -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="../assets/vendor/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+
+  <script src="../assets/js/loading.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/8.0.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/8.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/8.0.0/firebase-storage.js"></script>
+  <script src="/__/firebase/8.0.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/8.0.0/firebase-database.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+  <script src="../init-page.js"></script>
+  <script src="../build/admin.bundle.js"></script>
+</body>
+
+</html>

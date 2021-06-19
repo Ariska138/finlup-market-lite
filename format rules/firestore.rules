@@ -1,0 +1,64 @@
+rules_version = '2';
+service cloud.firestore {
+  function signedInSuperAdmin() {
+    return request.auth.uid == '<uid>';
+  }
+
+  function unsignedWithLimit() {
+    return (request.auth == null) && request.query.limit <= 1;
+  }
+
+function signed() {
+    return (request.auth != null);
+  }
+
+  match /databases/{database}/documents {
+
+    match /products/{product} {
+      allow read: if signedInSuperAdmin();
+      allow create: if signedInSuperAdmin();
+      allow update: if signedInSuperAdmin();
+      allow delete: if signedInSuperAdmin();
+    }
+  
+    match /products-test/{producttest} {
+      allow read: if signedInSuperAdmin();
+      allow create: if signedInSuperAdmin();
+      allow update: if signedInSuperAdmin();
+      allow delete: if signedInSuperAdmin();
+    }
+  
+    match /transaction/{trans} {
+      allow get: if signed() || (request.auth.uid == resource.data.uid) || true;
+      allow list: if signedInSuperAdmin() || (request.auth.uid == resource.data.uid);
+      allow create: if (request.resource.data.status == 0 &&
+       request.resource.data.name != null &&
+       request.resource.data.wa != null &&
+       request.resource.data.confirmed_at == null
+       );
+      allow update: if signedInSuperAdmin();
+      allow delete: if signedInSuperAdmin();
+    }
+
+    match /transaction-test/{transtest} {
+      allow get: if signedInSuperAdmin() || (request.auth.uid == resource.data.uid) || true;
+      allow list: if signedInSuperAdmin() || (request.auth.uid == resource.data.uid);
+      allow create: if (request.resource.data.status == 0 && (
+        request.auth == null || request.auth.uid == request.resource.data.uid || signed()
+      ));
+      allow update: if signedInSuperAdmin();
+      allow delete: if signedInSuperAdmin();
+    }
+
+     match /members/{members} {
+      allow get: if signedInSuperAdmin();
+      allow list: if signedInSuperAdmin();
+      allow create: if (request.resource.data.confirmed_at == "" && 
+        request.resource.data.rule == 0 && 
+        request.resource.data.uid == request.auth.uid
+      );
+      allow update: if signedInSuperAdmin();
+      allow delete: if signedInSuperAdmin();
+    }
+  }
+}

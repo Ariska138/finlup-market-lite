@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>invoice</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/vendor/jquery.min.js"><\/script>')</script>
+    <link rel="stylesheet" href="../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+        integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw=="
+        crossorigin="anonymous"></script>
+    <style>
+        .text-right {
+            text-align: right;
+        }
+
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 16px;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        /* .invoice-box table tr td:nth-child(2) { */
+        /* text-align: right; */
+        /* } */
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+            text-align: left;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        /* .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    } */
+
+        .invoice-box table tr.total td:nth-child(3) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        .image-icon {
+            -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+            max-width: 70%;
+            max-height: 70%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .rtl table {
+            text-align: right;
+        }
+
+        .rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+    <script src="../init-page.js"></script>
+</head>
+
+<body>
+    <div id="demo-content">
+
+        <header class="entry-header">
+
+        </header>
+
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+
+        </div>
+
+        <div id="content">
+            <!-- Navigation-->
+            <div class="invoice-box">
+                <table id="id-table" cellpadding="0" cellspacing="0">
+                    <tr class="top">
+                        <td colspan="4">
+                            <table>
+                                <tr>
+                                    <td colspan="2" class="title">
+                                        <img src="../assets/img/logos/iconweb.png" style="width:100%; max-width:150px;">
+                                    </td>
+
+                                    <td colspan="2">
+                                        Invoice #<span id="id-invoice">xxxx</span><br>
+                                        Dibuat: <span id="id-tanggal">DD MMM YYYY</span><br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr class="information">
+                        <td colspan="4">
+                            <table>
+                                <tr>
+                                    <td colspan="2">
+                                        <b><span id="name_company">-</span></b><br>
+                                        <span id="address_1">-</span><br>
+                                        <span id="address_2">-</span>
+                                    </td>
+
+                                    <td colspan="2">
+                                        <b><span>Pemesan</span></b><br>
+                                        <span id="id-name"></span><br>
+                                        <span id="id-wa"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr class="heading">
+                        <td colspan="3">
+                            Keterangan
+                        </td>
+
+                        <td colspan="1">
+                            #
+                        </td>
+                    </tr>
+
+                    <tr class="details">
+                        <td colspan="3">
+                            Status Pemesanan
+                        </td>
+
+                        <td colspan="1">
+                            <span id="id-status">-</span>
+                        </td>
+                    </tr>
+
+                    <tr class="heading">
+
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Item
+                        </td>
+
+                        <td>
+                            Harga
+                        </td>
+                        <td>
+                            Total
+                        </td>
+                    </tr>
+
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.0.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.0.0/firebase-auth.js"></script>
+    <script src="/__/firebase/8.0.0/firebase-storage.js"></script>
+    <script src="/__/firebase/8.0.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/8.0.0/firebase-database.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="../build/invoice.bundle.js"></script>
+    <script src="../assets/js/loading.js"></script>
+</body>
+
+</html>
