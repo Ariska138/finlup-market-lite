@@ -75,6 +75,11 @@ var configPage = {
 }
 ```
 
+if you want to upgrade, dot forget to backup your icon and image banner.
+
+- /assets/img.logos/iconweb.jpg
+- /build/img/header-bg.jpg
+
 ## Technology
 
 - Firebase Auth
