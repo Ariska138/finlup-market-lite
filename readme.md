@@ -23,8 +23,10 @@ Helping your offline based selling business online. of records and product catal
 
 ## Example Demo
 
-- [demo-lite.finlup.id](https://demo-lite.finlup.id)
-- user and password contact me: ariska138@gmail.com
+![Demo Finlup Lite](https://github.com/Ariska138/finlup-lite-market/demo-lite?raw=true)
+
+[demo-lite.finlup.id](https://demo-lite.finlup.id)
+User and Password contact me: ariska138@gmail.com
 
 ## UMKM that have implemented
 
