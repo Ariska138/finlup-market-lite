@@ -2,9 +2,42 @@
 
 Helping your offline based selling business online. of records and product catalogs.
 
+## Technology
+
+- Firebase Auth
+- Firebase Storage
+- Firebase Hosting
+- Firestore
+- Database Realtime
+- JQuery
+- HTML5
+- Javascript
+
+## Features
+
+- Whatsapp
+- Responsive on Mobile/Desktop
+- List Product
+- Record transaction
+- Stok
+
+## Example Demo
+
+![Demo Finlup Lite](https://github.com/Ariska138/finlup-lite-market/blob/master/demo-lite.png?raw=true)
+![Demo Product](https://github.com/Ariska138/finlup-lite-market/blob/master/products.png?raw=true)
+You can try demo at [demo-lite.finlup.id](https://demo-lite.finlup.id)
+
+For Administration can visit [demo-lite.finlup.id/fn-admin](https://demo-lite.finlup.id/fn-admin/)
+
+For user and password, you can contact me at ariska138@gmail.com
+
 ## Setup
 
-Create file in folder public with name `init-page.js`, with example like this:
+- Make a project Firebase
+- Set Enable feature Database Realtime, Firestorage, and Storage
+- Insert new user with email and copy uid
+- Download this project and Extract
+- Create file in folder public with name `init-page.js`, with example like this:
 
 ```
 var configPage = {
@@ -24,7 +57,7 @@ var configPage = {
             "description": "Anda dapat pilih product yang sesuai buat Anda"
         }
     ],
-    "uid": "uwRIOBes1MO0uDlJKiSRESL5uoo2",
+    "uid": "<uid>",
     "wa": "6285155223600",
     "wa_setup": {
         popupMessage: 'Hallo, Ada yang bisa saya bantu?',
@@ -75,39 +108,24 @@ var configPage = {
 }
 ```
 
+- Move files in folder "format rules" on Root
+- Paste code UID on file `init-page.js`, `firestore.rules`, `storage.rules`, and `database.rules.json`.
+- Setup project become firebase project
+  - 'npm install -g firebase-tools'
+  - 'firebase login'
+  - 'firebase init'
+- Test 'firebase serve'
+- Deploy on firebase
+  - 'firebase deploy'
+
+## Modify
+
 if you want to upgrade, dot forget to backup your icon and image banner.
 
 - /assets/img.logos/iconweb.jpg
 - /build/img/header-bg.jpg
-
-## Technology
-
-- Firebase Auth
-- Firebase Storage
-- Firebase Hosting
-- Firestore
-- Database Realtime
-- JQuery
-- HTML5
-- Javascript
-
-## Features
-
-- Whatsapp
-- Responsive on Mobile/Desktop
-- List Product
-- Record transaction
-- Stok
-
-## Example Demo
-
-![Demo Finlup Lite](https://github.com/Ariska138/finlup-lite-market/blob/master/demo-lite.png?raw=true)
-![Demo Product](https://github.com/Ariska138/finlup-lite-market/blob/master/products.png?raw=true)
-You can try demo at [demo-lite.finlup.id](https://demo-lite.finlup.id)
-
-For Administration can visit [demo-lite.finlup.id/fn-admin](https://demo-lite.finlup.id/fn-admin/)
-
-For user and password, you can contact me at ariska138@gmail.com
+- /favicon.ico [tools generator](https://favicon.io/favicon-converter/)
+- init-page.js
 
 ## UMKM that have implemented
 
