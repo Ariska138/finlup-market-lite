@@ -1,6 +1,8 @@
 # Finlup Market Lite
 
 Helping your offline based selling business online. of records and product catalogs.
+![Demo Finlup Lite](https://github.com/Ariska138/finlup-lite-market/blob/master/demo-lite.png?raw=true)
+![Demo Product](https://github.com/Ariska138/finlup-lite-market/blob/master/products.png?raw=true)
 
 ## Technology
 
@@ -23,11 +25,8 @@ Helping your offline based selling business online. of records and product catal
 
 ## Example Demo
 
-![Demo Finlup Lite](https://github.com/Ariska138/finlup-lite-market/blob/master/demo-lite.png?raw=true)
-![Demo Product](https://github.com/Ariska138/finlup-lite-market/blob/master/products.png?raw=true)
-You can try demo at [demo-lite.finlup.id](https://demo-lite.finlup.id)
-
-For Administration can visit [demo-lite.finlup.id/fn-admin](https://demo-lite.finlup.id/fn-admin/)
+![Demo Admin](https://github.com/Ariska138/finlup-lite-market/blob/master/admin.png?raw=true)
+You can try demo administration with visit [demo-lite.finlup.id/fn-admin](https://demo-lite.finlup.id/fn-admin/)
 
 For user and password, you can contact me at ariska138@gmail.com
 
