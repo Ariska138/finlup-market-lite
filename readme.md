@@ -30,6 +30,11 @@ You can try demo administration with visit [demo-lite.finlup.id/fn-admin](https:
 
 For user and password, you can contact me at ariska138@gmail.com
 
+## Requiredment
+
+- Nodejs
+- Browser Chrome lastest
+
 ## Setup
 
 - Make a project Firebase
