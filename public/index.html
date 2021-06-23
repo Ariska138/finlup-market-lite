@@ -17,6 +17,10 @@
 
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -87,13 +91,20 @@
                         <span id="title-first" style="color:#fed136;">SELAMAT DATANG!</span>
                     </div>
                 </div>
-                <div class="masthead-heading text-uppercase"><span id="title-second">ETIKA BUNGA</span></div>
+                <div class="masthead-heading text-uppercase"><span id="title-second" class="typewrite"
+                        data-period="2000"><span class="wrap"></span></span></div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" id="button-main"
                     href="#services">Tell Me More</a>
+                <div class="container-scroll mt-5">
+                    <div class="field-scroll">
+                        <div class="scroll"></div>
+                    </div>
+                </div>
         </div>
         </header>
 
-        <div class="fixed_button"><button id="btn-totall" class="btn btn-danger btn-lg" style="display: none;"><span
+        <div class="fixed_button"><button id="btn-totall" class="btn btn-danger btn-lg"
+                style="display: none; min-width: 274px;"><i class="fas fa-shopping-cart"></i> <span
                     id="total-items">0</span> Items - Rp <span id="total-prices">0</span>,-</button></div>
 
         <div id="wa-button"></div>
@@ -216,6 +227,7 @@
 
     </div>
     <!-- /Demo content -->
+    <script src="build/app_start.bundle.js"></script>
     <!-- Bootstrap core JS-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
