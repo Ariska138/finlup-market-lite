@@ -44,30 +44,42 @@ For user and password, you can contact me at ariska138@gmail.com
 - Create file in folder public with name `init-page.js`, with example like this:
 
 ```
+/**
+ *
+ */
+
 var configPage = {
-    "title": "Finlup Demo",
-    "desc": "Demo Landing page sales..",
+    "seo": {
+        "title": "Finlup Demo",
+        "description": "Demo Landing page sales..",
+    },
+    "multiple_title": [
+        "Finlup Demo",
+        "Silakan Coba",
+        "Ini hanya contoh"
+    ],
     "categories": [
         {
-            "ns": "uncategory",
-            "name": "Tidak Tercategori",
-            "summery": "-",
-            "description": "tidak ada"
+            "ns": "products",
+            "name": "Produk",
+            "summery": "Pilih produk yang sesuai dengan Anda.",
+            "description": "Anda dapat pilih produk yang sesuai buat Anda"
         },
         {
-            "ns": "products",
-            "name": "products",
-            "summery": "Pilih product yang sesuai dengan Anda.",
-            "description": "Anda dapat pilih product yang sesuai buat Anda"
+            "ns": "other",
+            "name": "Lain-lain",
+            "summery": "Pilih produk yang sesuai dengan Anda.",
+            "description": "Kami juga menyediakan lain-lainnya"
         }
     ],
     "uid": "<uid>",
-    "wa": "6285155223600",
     "wa_setup": {
-        popupMessage: 'Hallo, Ada yang bisa saya bantu?',
-        message: "Saya ingin tanya",
+        "wa": "6285155223600",
+        "popupMessage": 'Hallo, Ada yang bisa saya bantu?',
+        "message": "Saya ingin tanya",
     },
     "profile": {
+        "logo": "assets/img/logos/iconweb.png",
         "name_company": "Finlup Demo",
         "address_1": "Ngrowo, Pilangsari",
         "address_2": "Sragen"
@@ -76,11 +88,10 @@ var configPage = {
         {
             "id": "icon",
             "style": "menu",
-            "icon": "assets/img/iconweb.png",
             "icon_href": "#page_top",
             "menus": [
                 {
-                    "menu": "Products",
+                    "menu": "Lihat Produk",
                     "menu_href": "#product"
                 }
             ]
@@ -90,14 +101,30 @@ var configPage = {
             "style": "banner",
             "title_first": "Selamat Datang!",
             "title_second": "Finlup Demo",
-            "button_action": "Kami Menyediakan",
+            "button_action": "Lihat Produk",
             "button_action_href": "#product"
+        }
+        , {
+            "id": "services",
+            "style": "services",
+            "contents": [
+                {
+                    "image_href": "./assets/img/Services/grass.jpg",
+                    "target_to": "#ternak",
+                    "idx_categories": 0
+                }, {
+                    "image_href": "./assets/img/Services/other.jpg",
+                    "target_to": "#other",
+                    "idx_categories": 1
+                }
+
+            ]
         },
         {
             "id": "product",
             "style": "product",
             "content": "categories",
-            "content_id": 1
+            "content_id": 0,
         },
         {
             "id": "footer",
@@ -126,8 +153,7 @@ var configPage = {
 
 if you want to upgrade, dot forget to backup your icon and image banner.
 
-- /assets/img.logos/iconweb.jpg
-- /build/img/header-bg.jpg
+- /assets/
 - /favicon.ico [tools generator](https://favicon.io/favicon-converter/)
 - init-page.js
 
@@ -136,7 +162,14 @@ if you want to upgrade, dot forget to backup your icon and image banner.
 - [etikabunga.com](https://etikabunga.com)
 - [solokurma.com](https://solokurma.com)
 - [toko.sarikurma.id](https://toko.sarikurma.id)
+- [khair-nursery.web.app](https://khair-nursery.web.app)
+- Dll
 
 ## Source Code
 
-- https://github.com/Ariska138/finlup-lite-market
+- https://github.com/Ariska138/finlup-market-lite
+
+## Donation
+
+- [:coffee: Coffee](https://finlup.id/payment/coffee)
+- [:pizza: Pizza](https://finlup.id/payment/pizza)
