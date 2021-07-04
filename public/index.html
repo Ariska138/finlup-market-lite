@@ -46,7 +46,7 @@
     <script src="https://kit.fontawesome.com/a38b3c3354.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="demo">
+<body class="demo" id="page-top">
     <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
@@ -70,7 +70,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
                 <div class="container">
-                    <a class="navbar-brand js-scroll-trigger" href="#page-top"><img id="logo-brand" src="" /></a>
+                    <a id="id-logo" class="navbar-brand js-scroll-trigger" href="#page-top"></a>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -226,7 +226,6 @@
 
     </div>
     <!-- /Demo content -->
-    <script src="build/app_start.bundle.js"></script>
     <!-- Bootstrap core JS-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
@@ -244,6 +243,7 @@
 
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
+    <script src="build/app_start.bundle.js"></script>
     <script src="build/main.bundle.js"></script>
 
 

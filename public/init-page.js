@@ -1,46 +1,40 @@
-var configPage = {
+/**
+ * 
+ */
 
-    "env": "prod",
-    "title": "Finlup Demo",
-    "desc": "Demo Landing page sales..",
-    "features": {
-        "reseller": false,
-        "blog": "#"
-    },
-    "categories": [
-        {
-            "ns": "uncategory",
-            "name": "Tidak Tercategori",
-            "summery": "-",
-            "description": "tidak ada"
-        },
-        {
-            "ns": "products",
-            "name": "products",
-            "summery": "Pilih product yang sesuai dengan Anda.",
-            "description": "Anda dapat pilih product yang sesuai buat Anda"
-        }
-    ],
+var configPage = {
     "uid": "uwRIOBes1MO0uDlJKiSRESL5uoo2",
-    "wa": "6285155223600",
-    "wa_setup": {
-        popupMessage: 'Hallo, Ada yang bisa saya bantu?',
-        message: "Saya ingin tanya",
+    "seo": {
+        "title": "Finlup Demo",
+        "description": "Demo Landing page sales..",
     },
+    "multiple_title": [
+        "Finlup Demo",
+        "Silakan Coba",
+        "Ini hanya contoh"
+    ],
     "profile": {
+        "logo": "assets/img/logos/iconweb.png",
         "name_company": "Finlup Demo",
         "address_1": "Ngrowo, Pilangsari",
         "address_2": "Sragen"
     },
+    "categories": [
+        {
+            "ns": "products",
+            "name": "Produk",
+            "summery": "Pilih produk yang sesuai dengan Anda.",
+            "description": "Anda dapat pilih produk yang sesuai buat Anda"
+        }
+    ],
     "layouts": [
         {
             "id": "icon",
             "style": "menu",
-            "icon": "assets/img/iconweb.png",
             "icon_href": "#page_top",
             "menus": [
                 {
-                    "menu": "Products",
+                    "menu": "Lihat Produk",
                     "menu_href": "#product"
                 }
             ]
@@ -48,17 +42,16 @@ var configPage = {
         {
             "id": "banner",
             "style": "banner",
-            "background_image": "",
             "title_first": "Selamat Datang!",
             "title_second": "Finlup Demo",
-            "button_action": "Kami Menyediakan",
+            "button_action": "Lihat Produk",
             "button_action_href": "#product"
         },
         {
             "id": "product",
             "style": "product",
             "content": "categories",
-            "content_id": 1
+            "content_id": 0,
         },
         {
             "id": "footer",
@@ -69,5 +62,10 @@ var configPage = {
                 "map": "https://g.page/finlup_id"
             }
         }
-    ]
+    ],
+    "wa_setup": {
+        "wa": "6285155223600",
+        "popupMessage": 'Hallo, Ada yang bisa saya bantu?',
+        "message": "Saya ingin tanya",
+    }
 }
