@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html class="no-js" lang="en">
 <!--<![endif]-->
 
 <head>
@@ -14,13 +14,13 @@
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="theme-color" content="#000" />
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="./site.webmanifest">
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -41,7 +41,6 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="manifest" href="./manifest.json">
     <script src="init-page.js"></script>
     <script src="https://kit.fontawesome.com/a38b3c3354.js" crossorigin="anonymous"></script>
 </head>
@@ -76,7 +75,7 @@
                         aria-label="Toggle navigation">
                         <!-- Menu -->
                         <!-- <i class="fas fa-bars ml-1"></i> -->
-                        <img src="./assets/img/icons/bars-solid.svg" width="20px">
+                        <img src="./assets/img/icons/bars-solid.svg" alt="menu" width="20px">
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul id="ly-menus" class="navbar-nav text-uppercase ml-auto">
@@ -84,21 +83,7 @@
                     </div>
                 </div>
             </nav>
-            <header class="masthead">
-                <div class="container">
-                    <div class="masthead-subheading">
-                        <span id="title-first" style="color:#fed136;">SELAMAT DATANG!</span>
-                    </div>
-                </div>
-                <div class="masthead-heading text-uppercase"><span id="title-second" class="typewrite"
-                        data-period="2000"><span class="wrap"></span></span></div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" id="button-main"
-                    href="#services">Tell Me More</a>
-                <div class="container-scroll mt-5">
-                    <div class="field-scroll">
-                        <div class="scroll"></div>
-                    </div>
-                </div>
+
         </div>
         </header>
 
@@ -245,6 +230,7 @@
     <script src="/__/firebase/init.js"></script>
     <script src="build/app_start.bundle.js"></script>
     <script src="build/main.bundle.js"></script>
+    <script src="build/start_sw.bundle.js"></script>
 
 
 </body>

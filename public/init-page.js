@@ -3,7 +3,7 @@
  */
 
 var configPage = {
-    "uid": "uwRIOBes1MO0uDlJKiSRESL5uoo2",
+    "uid": "<UID>",
     "seo": {
         "title": "Finlup Demo",
         "description": "Demo Landing page sales..",
@@ -23,7 +23,6 @@ var configPage = {
         {
             "ns": "products",
             "name": "Produk",
-            "summery": "Pilih produk yang sesuai dengan Anda.",
             "description": "Anda dapat pilih produk yang sesuai buat Anda"
         }
     ],
@@ -36,6 +35,10 @@ var configPage = {
                 {
                     "menu": "Lihat Produk",
                     "menu_href": "#product"
+                }, {
+                    "id": "instal",
+                    "menu": "Instal",
+                    "menu_href": "#"
                 }
             ]
         },
@@ -50,6 +53,7 @@ var configPage = {
         {
             "id": "product",
             "style": "product",
+            "summary": "Pilih produk yang sesuai dengan Anda.",
             "content": "categories",
             "content_id": 0,
         },
@@ -57,6 +61,9 @@ var configPage = {
             "id": "footer",
             "style": "footer",
             "sosmed": {
+                "shopee": "#",
+                "tokopedia": "#",
+                "youtube": "https://www.youtube.com/channel/UCAeMygdKG097cRSFFAxx2jw",
                 "fb": "https://www.facebook.com/finlup/",
                 "ig": "https://www.instagram.com/finlup_id/",
                 "map": "https://g.page/finlup_id"
@@ -64,7 +71,7 @@ var configPage = {
         }
     ],
     "wa_setup": {
-        "wa": "6285155223600",
+        "wa": "<no_Wa>",
         "popupMessage": 'Hallo, Ada yang bisa saya bantu?',
         "message": "Saya ingin tanya",
     }
